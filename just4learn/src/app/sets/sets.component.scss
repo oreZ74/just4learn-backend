@@ -1,0 +1,63 @@
+.option-list {
+    margin: 20px;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 500;
+    
+}
+
+
+::ng-deep .option-list * {
+  text-decoration: none !important;
+  color:#E88954;
+}
+
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden{
+      transition: none;
+  }
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0%);
+}
+
+h3 {
+  margin-top: 0;
+  color:black;
+}
+  
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+  
+li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+li:hover {
+  background-color: #e6e6e6;
+}
+  
+li.selected {
+  background-color: #E88954;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .card_container_sets{
+    margin: 0rem;
+    padding: 0rem;
+  }
+}

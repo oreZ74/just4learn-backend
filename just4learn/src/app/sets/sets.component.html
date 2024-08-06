@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="option-list hidden">
+    <h3>Sammlungen</h3>
+      <accordion  *ngFor="let option of options">
+        <accordion-group [heading]="option.displayName" (isOpenChange)="log($event)" style="text-decoration: none;">
+            <div class="container card_container_sets">
+                <div class="row justify-content-center card_container_sets">
+                    <div class = "col-md-9 card_container_sets">
+                        <div class="card card_container_sets">
+                            <div *ngIf="!option.isFriend">
+                                <app-add-card-collection></app-add-card-collection>
+                            </div>
+                            <div>
+                                <app-card-collection-list [selectedUserId]="option.userId" [isFromFriend]="option.isFriend"></app-card-collection-list>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </accordion-group>
+     </accordion>
+  </div>
+
+
+
+
+
+

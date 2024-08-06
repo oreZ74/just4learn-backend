@@ -1,0 +1,5 @@
+<div class="card_collection_">
+    <div *ngFor="let card of cards" >
+        <app-card-flip [param1]="card.content" [param2]="card.question" [param3]="card.answer" ></app-card-flip>
+    </div>
+</div>

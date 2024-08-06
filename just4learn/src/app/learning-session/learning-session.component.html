@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<br>
+<div class="container" >
+    <div class="row justify-content-center" >
+    <div class="card" style="margin-top: 20px; padding: 1rem;" >
+        <div class="row">
+            <div class="col">
+                <p>Karten übrig:{{this.cards.length}}</p>
+            </div>
+            <div class="col">
+                <p>Richtig: {{this.right}}</p>
+            </div>
+            <div class="col">
+                <p>Falsch: {{this.wrong}}</p>
+            </div>
+        </div>
+
+        <div class="card" *ngIf="currentCard">
+            <div class="card-body">
+              <h2 class="card-title">{{ currentCard.title }}</h2>
+              <h3>Inhalte:</h3>
+              <p class="card-text">{{ currentCard.content }}</p>
+              <h3>Frage:</h3>
+              <p class="card-text">{{ currentCard.question }}</p>
+              <button class="btn btn_primary" (click)="revealAnswer()" *ngIf="!answerRevealed">Lösung</button>
+              <div *ngIf="answerRevealed">
+                <h3>Antwort:</h3>
+                <p class="card-text">{{ currentCard.answer }}</p>
+                <h3>Lagen Sie richtig?</h3>
+              
+                <button class="btn btn_success" style="margin-right: 0.4rem;" (click)="userResponse(true)">Ja</button>
+                <button class="btn btn_danger" (click)="userResponse(false)">Nein</button>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn_delete" style="margin-top: 0.4rem;" (click)="cancelLearning()">Abbrechen</button>
+    </div>
+</div>
+</div>
+
+  

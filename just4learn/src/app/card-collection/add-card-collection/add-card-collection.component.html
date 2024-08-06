@@ -1,0 +1,12 @@
+
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-horizontal add_card_collection">
+      <div class="form-group">
+        <label for="collectionName">Name der Sammlung</label>
+      </div>
+      <div class="form-group _input">
+        <input type="text" class="form-control" id="collectionName" formControlName="collectionName" placeholder="Geben Sie den Namen der Sammlung ein">
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Sammlung hinzufügen</button>
+      </div>
+    </form>
+
+  

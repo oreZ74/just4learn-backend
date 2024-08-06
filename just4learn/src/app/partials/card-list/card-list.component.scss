@@ -1,0 +1,40 @@
+.card_list_button_box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.btn_delete{
+  background-color: rgb(196, 20, 20);
+  color: white;
+}
+
+.btn_delete:hover{
+  border-color: rgb(175, 18, 18);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(196, 20, 20);
+}
+
+.btn_success{
+  background-color: rgb(26, 148, 15);
+  color: white;
+}
+
+.btn_success:hover{
+  border-color: rgb(26, 148, 15);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(26, 148, 15);
+}
+
+.btn_primary{
+  background-color: rgb(24, 44, 216);
+  color: white;
+}
+
+.btn_primary:hover{
+  border-color: rgb(24, 44, 216);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(24, 44, 216);
+}

@@ -1,0 +1,20 @@
+.card_collection_{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    height: 25px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #E88954;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }

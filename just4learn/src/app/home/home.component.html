@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+
+<div class="home_dashboard_container hidden">
+  <div class="home_dashboard_card_container" *ngFor="let collection of cardCollections">
+    <div class="header_button">
+      <p>{{ collection.collectionName }}</p>
+      <button class="btn btn_primary"><a [routerLink]="'/users/' +collection.userId + '/card_collections/' + collection._id + '/learningsession'"  class="text-white">Lernen</a></button>
+    </div>
+    <div>
+      <app-card-flip-list [collectionId]="collection.id"></app-card-flip-list>
+    </div>
+  </div>
+</div>

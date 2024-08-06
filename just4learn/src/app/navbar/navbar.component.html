@@ -1,0 +1,48 @@
+<div class='smudy__navbar'>
+    <div class='smudy__navbar-links'>
+        <div class='smudy__navbar-links_logo'>
+            <img src="../../assets/Smudy.png" alt="logo"/>
+        </div>
+
+        <div class='smudy__navbar-links_container'>
+            <p><a [routerLink]="'/home'"><img src="../../assets/Home_Logo.png" alt="nav_logo"/>Home</a></p>
+            <p><a [routerLink]="'/sets'"><img src="../../assets/Sets_Logo.png" alt="nav_logo"/>Sets</a></p>
+            <p><a [routerLink]="'/stats'"><img src="../../assets/Stats_Logo.png" alt="nav_logo"/>Stats</a></p>
+            <p><a [routerLink]="'/friends'"><img src="../../assets/Friends_Logo.png" alt="nav_logo" />Freunde</a></p>
+            <p><a [routerLink]="'/about'"><img src="../../assets/About_Logo.png" alt="nav_logo" />About</a></p>
+        </div>
+
+        <div class='smudy__navbar-login_container'>
+            <div class="d-flex align-items-center">
+                <p><a href='/logout'>Logout</a></p>
+                <p class="mr-3"><a [routerLink]="'/users/' + userId + '/profile'"><img class="navbar-profile-picture" src="../../assets/user_avatar.jpeg" /></a></p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <div class="smudy__navbar-menu">
+        <ng-container *ngIf="toggleMenu; else menuIcon">
+            <img color="#fff" size="27" src="../../assets/RiMenuClose.png" width="32px" height="32px" (click)="toggleMenu = false"/>
+        </ng-container>
+        <ng-template #menuIcon>
+            <img color="#fff" size="27" src="../../assets/RiMenu3Line.png" width="32px" height="32px" (click)="toggleMenu = true"/>
+        </ng-template>
+    </div>
+</div>
+        <ng-container *ngIf="toggleMenu">
+            <div class="smudy__navbar-menu_container scale-up-center">
+                <div class="smudy__navbar-menu_container-links">
+                    <p><a [routerLink]="'/home'"><img src="../../assets/Home_Logo.png" alt="nav_logo"/>Home</a></p>
+                    <p><a [routerLink]="'/sets'"><img src="../../assets/Sets_Logo.png" alt="nav_logo"/>Sets</a></p>
+                    <p><a [routerLink]="'/stats'"><img src="../../assets/Stats_Logo.png" alt="nav_logo"/>Stats</a></p>
+                    <p><a [routerLink]="'/friends'"><img src="../../assets/Friends_Logo.png" alt="nav_logo" />Freunde</a></p>
+                    <p><a [routerLink]="'/about'"><img src="../../assets/About_Logo.png" alt="nav_logo" />About</a></p>
+                    <p><a [routerLink]="'/logout'">Logout</a></p>
+                    <p><a [routerLink]="'/users/' + userId + '/profile'"><img src="../../assets/user_avatar.jpeg" style="border-radius: 50%;" alt="nav_logo" />Profil</a></p>
+                </div>
+            </div>
+        </ng-container>
+

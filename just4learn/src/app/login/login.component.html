@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row justify-content-center align-items-center vh-100">
+    <div class="col-md-6 col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-group text-center" *ngIf="loading">
+            <div class="spinner-border" role="status"></div>
+          </div>
+          <div class="form-group alert alert-danger" role="alert" *ngIf="showError">
+            Die angegebene E-Mail oder das Passwort ist ungültig. Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.
+          </div>
+          <h5 class="card-title text-center">Login</h5>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group">
+              <label for="username">Username (Email)</label>
+              <input type="email" id="username" name="username" placeholder="Enter your email" class="form-control" formControlName="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group d-flex justify-content-between align-items-center">
+              <button type="submit" class="btn btn-primary">Login</button>
+              <p style="margin-top: 10%">or register</p>
+
+              <div>
+                <button type="button" class="btn btn-primary" (click)="register()">Register</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

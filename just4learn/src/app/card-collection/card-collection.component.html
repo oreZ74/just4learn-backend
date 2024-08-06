@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-10">
+            <div class="card">
+                <div>
+                    <div *ngIf="!collection">
+                        <div class="loading-spinner">
+                            <div class="spinner-border text-primary"></div>
+                        </div>
+                    </div>
+                    <div *ngIf="collection">
+                        <div>
+                            <h2 class="card-title">{{ collection.collectionName }}</h2>
+                        </div>
+                        <div class="card_collection_button_box">
+                            <button class="btn btn_success mr-2"><a
+                                    [routerLink]="'/users/' +collection.userId + '/card_collections/' + collection._id + '/add/'"
+                                    class="text-white">Karte hinzufügen</a></button>
+                            <button class="btn btn_delete mr-2"><a
+                                [routerLink]="'/sets'"
+                                class="text-white">zurück</a></button>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Cards:</h2>
+                    </div>
+                    <div>
+                        <app-card-list></app-card-list>
+                    </div>
+                </div>
+            </div>
+        </div>

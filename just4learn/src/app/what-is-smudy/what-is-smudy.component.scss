@@ -1,0 +1,205 @@
+.smudy__whatIsSmudy_1 {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+    background: rgb(233, 233, 233);
+}
+
+.smudy__whatIsSmudy_2{
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    background-color: #E88954;
+    height: 100px;
+}
+
+.smudy__whatIsSmudy-feature {
+    display: flex;
+}
+
+/* Customizing feature component as per needs */
+.smudy__whatIsSmudy-feature, 
+.smudy__whatIsSmudy-container__feature {
+    margin: 0;
+}
+
+/* Customizing feature component as per needs */
+.smudy__whatIsSmudy-feature, 
+.smudy__whatIsSmudy-container__feature-text {
+    max-width: 700px;
+}
+
+.smudy__whatIsSmudy-heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    margin: 4rem 0 2rem;
+}
+
+.smudy__whatIsSmudy-heading h1 {
+    font-size: 34px;
+    line-height: 45px;
+    font-weight: 800;
+    font-family: 'Font Awesome 5 Free';
+    max-width: 510px;
+}
+
+.smudy__whatIsSmudy-heading p {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000;
+    cursor: pointer;
+}
+
+.smudy__whatIsSmudy-container {
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 2rem;
+}
+
+/* Customizing feature component as per needs */
+.smudy__whatIsSmudy-container__feature {
+    flex: 1;
+    margin: 1rem;
+    min-width: 210px;
+    flex-direction: column;
+}
+
+/* Customizing feature component as per needs */
+.smudy__whatIsSmudy-container, 
+.smudy__whatIsSmudy-container__feature-text {
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 850px) {
+    .smudy__whatIsSmudy-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0rem;
+    }
+
+    .smudy__whatIsSmudy-container{
+        flex-direction: column;
+    }
+
+    .smudy__whatIsSmudy-heading p {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* Customizing feature component as per needs */
+    .smudy__whatIsSmudy-feature, 
+    .smudy__whatIsSmudy-container__feature {
+        flex-direction: column;
+    }
+
+    /* Customizing feature component as per needs */
+    .smudy__whatIsSmudy-feature, 
+    .smudy__whatIsSmudy-container_feature-text {
+        margin-top: 0.5rem;
+    }
+
+    .smudy__whatIsSmudy-heading h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    /* Customizing feature component as per needs */
+    .smudy__whatIsSmudy-container, 
+    .smudy__whatIsSmudy-container__feature {
+        margin: 1rem 0;
+        min-width: 100%;
+    }
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+    .hidden{
+        transition: none;
+    }
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0%);
+}
+
+.smudy__whatIsSmudy-container__feature{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    margin: 1rem;
+}
+
+.smudy__whatIsSmudy-container__feature-title{
+    flex: 1;
+    margin-right: 2rem;
+
+}
+
+.smudy__whatIsSmudy-container__feature-title h1{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    color: #000;
+}
+
+.smudy__whatIsSmudy-container__feature-title div {
+    width: 38px;
+    height: 3px;
+    background: #E88954;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 0.25rem;
+}
+
+.smudy__whatIsSmudy-container__feature-text{
+    flex: 2;
+    max-width: 390px;
+    display: flex;
+}
+
+.smudy__whatIsSmudy-container__feature-text p{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000;
+}
+
+@media screen and (max-width: 550px) {
+    .smudy__whatIsSmudy-container__feature-title h1 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .smudy__whatIsSmudy-container_feature-text p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .smudy__whatIsSmudy-container__feature {
+        margin: 1rem 0;
+    }
+}

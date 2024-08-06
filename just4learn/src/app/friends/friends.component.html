@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="container-fluid hidden">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1>Freundesliste</h1>
+        <div class="alert alert-danger" *ngIf="showError">
+            Es wurde kein passender Nutzer mit dieser E-Mail gefunden oder der Nutzer ist bereits dein Freund!
+          </div>
+    <form [formGroup]="friendForm" (ngSubmit)="addFriend()" class="mb-4">
+        <div class="form-group">
+        <label for="name">E-Mail:</label>
+        <input type="email" class="form-control" id="name" formControlName="newFriendEmail" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Freund hinzufügen</button>
+    </form>
+  
+        <table class="table table-striped table-bordered hidden normal_table">
+          <thead>
+            <tr>
+              <th>Vorname</th>
+              <th>Nachname</th>
+              <th>Email</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let friend of friends">
+              <td>{{ friend.firstName }}</td>
+              <td>{{ friend.lastName }}</td>
+              <td>{{ friend.email }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteFriend(friend.userId)">Löschen</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-striped table-bordered mobile_table">
+          <thead>
+            <tr>
+              <th>Vorname</th>
+              <th>Nachname</th>
+              <th>Aktionen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let friend of friends">
+              <td>{{ friend.firstName }}</td>
+              <td>{{ friend.lastName }}</td>
+              <td>
+                <button class="btn btn-danger btn-sm" (click)="deleteFriend(friend.userId)">Löschen</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+      

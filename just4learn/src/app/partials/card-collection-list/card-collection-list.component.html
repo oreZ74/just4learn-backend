@@ -1,0 +1,40 @@
+<alert type="success" *ngIf="showDeleteAlert && deleteSuccess">
+  <strong>Erfolg</strong><br>Card Collection erfolgreich gelöscht
+</alert>
+
+<alert type="danger" *ngIf="showDeleteAlert && !deleteSuccess">
+  <strong>Fehler</strong><br>Das löschen ist fehlgeschlagen
+</alert>
+
+
+<div class="scroll-container">
+    <div class="card-deck">
+      <div class="card" *ngFor="let collection of cardCollections">
+        <div class="card-body">
+          <h5 class="card-title">{{ collection.collectionName }}</h5>
+
+            <div class="row">
+                <div class="col">
+                  Card Count: {{collection.cardCount}}<br *ngIf="!isFromFriend">
+
+                  <div class="col button_container_collection">
+                    <div class="button_contianer_2">
+                      <button class="btn btn_success mr-2" style="margin-right: 0.4rem;" *ngIf="!isFromFriend"><a [routerLink]="'/users/' +collection.userId + '/card_collections/' + collection._id" class="text-white" *ngIf="!isFromFriend">Bearbeiten</a></button>
+                      <button *ngIf="!isFromFriend" class="btn btn_delete mr-2" (click)="deleteCardCollectionClicked(collection.id)">Löschen</button>
+                    </div>
+                    <button class="btn btn_primary"><a [routerLink]="'/users/' +collection.userId + '/card_collections/' + collection._id + '/learningsession'"  class="text-white">Lernen</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p style="color: #E88954;" >Wollen Sie die card collection "{{deleteLastCollectionName}}" wirklich löschen?</p>
+    <button type="button" class="btn btn_delete mx-1"  (click)="deleteCardCollectionConfimed()" >Ja</button>
+    <button type="button" class="btn btn_success mx-1" (click)="deleteCardCollectionDeclined()" >Nein</button>
+  </div>
+</ng-template>

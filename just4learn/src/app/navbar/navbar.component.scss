@@ -1,0 +1,172 @@
+.smudy__navbar{
+    background-color: #E88954;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0.5rem 6rem;
+}
+
+.smudy__navbar-links{
+    padding: 0rem;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smudy__navbar-links_logo{
+    margin-right: 2rem;
+}
+
+.smudy__navbar-links_logo img{
+    width: 69px;
+    height: 69px;
+}
+
+.smudy__navbar-links_container img{
+    margin-right: 1rem;
+    width: 24px;
+    height: 24px;
+}
+
+.smudy__navbar-menu_container-links img{
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+
+.smudy__navbar-menu{
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+}
+
+.smudy__navbar-links_container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.smudy__navbar-menu_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    text-align: end;
+    background: #3d3d3d;
+    opacity: 80%;
+    padding: 2rem;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-top: 1.5rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.scale-up:hover {
+    transform: scale(1);
+  }
+
+.scale-up {
+    transform-origin: center;
+    transform: scale(0.2);
+    transition: transform 0.5s ease; // Hinzufügen einer Übergangsanimation für eine sanfte Skalierung
+}
+
+.smudy__navbar-menu{
+    display: none;
+}
+
+.smudy__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+.smudy__navbar-menu img{
+    cursor: pointer;
+}
+
+.smudy__navbar-links_container p,
+.smudy__navbar-menu_container p{
+    font-family: 'Font Awesome 5 Free';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    
+    text-transform: capitalize;
+
+    margin:0 1rem;
+    cursor:pointer;
+}
+
+a:-webkit-any-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.smudy__navbar-login_container p{
+    margin-bottom: 0rem;
+}
+
+.smudy__navbar-login_container{
+    display:  flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.smudy__navbar-links p:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+
+.smudy__navbar-login_container img{
+    margin-left: 1rem;
+    padding: 0rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+@media screen and (max-width: 1050px) {
+    .smudy__navbar-links_container{
+        display: none;
+    }
+
+    .smudy__navbar-menu{
+        display: flex;
+    }
+
+    .smudy__navbar-menu{
+        display: flex;
+    }
+
+    .smudy__navbar-login_container{
+        display: none;
+    }
+
+    .smudy__navbar-menu_container {
+        top: 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .smudy__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .smudy__navbar {
+        padding: 2rem;
+    }
+
+    .smudy__navbar-menu_container {
+        top: 90px;
+    }
+}

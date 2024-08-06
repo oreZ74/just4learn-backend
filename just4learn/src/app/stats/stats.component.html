@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+
+<div class="stats_scrollable_div hidden">
+    <div  style="background-color: gray;">
+        <table id="table" style="width: 100%;">
+            <tr class="stats_data_div">
+                <th id="stats_collectionname">Collectionname</th>
+                <th id="stats_creator">Ersteller</th>
+                <th id="stats_your_score">Dein Score</th>
+                <th id="stats_cardcount">Cardcount</th>
+                <th id="stats_creationdate">Erstellungsdatum</th>
+            </tr>
+            <tr *ngIf="!cardCollections">
+                <td>
+                    <div class="loading-spinner">
+                        <div class="spinner-border text-primary"></div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="stats_data_div" *ngFor="let collection of cardCollections">
+                <td id="stats_collectionname">{{ collection.collectionName }}</td>
+                <td id="stats_creator">{{ collection.userId.firstName}}</td>
+                <td id="stats_your_score">{{ this.cardCollectionScore[collection.id] }}</td>
+                <td id="stats_cardcount">{{ collection.cardCount }}</td> 
+                <td id="stats_creationdate">{{ formatDate(collection.creationDate) }}</td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>

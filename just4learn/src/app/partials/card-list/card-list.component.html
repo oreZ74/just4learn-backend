@@ -1,0 +1,35 @@
+<alert type="success" *ngIf="showDeleteAlert && deleteSuccess">
+    <strong>Erfolg</strong><br>Card erfolgreich gelöscht
+  </alert>
+  
+  <alert type="danger" *ngIf="showDeleteAlert && !deleteSuccess">
+    <strong>Fehler</strong><br>Das löschen ist fehlgeschlagen
+  </alert>
+  
+  
+  <div class="scroll-container">
+      <div class="card-deck">
+        <div class="card" *ngFor="let card of cards">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p> Erstellt: {{card.creationDate}}</p>
+            <p *ngIf="this.cardDetails[card.id]"> Aufrufe: {{this.cardDetails[card.id].calls}}</p>
+            <p *ngIf="this.cardDetails[card.id]"> Richtig beantwortet: {{this.cardDetails[card.id].right}}</p>
+            <p *ngIf="this.cardDetails[card.id]"> Falsch beantwortet: {{this.cardDetails[card.id].wrong}}</p>
+            <div class="row"> 
+                <div class="col card_list_button_box">
+                  <button class="btn btn_success mr-2"><a [routerLink]="'/users/' +card.userId + '/card_collections/' + card.cardCollectionId + '/card/' + card._id +'/detail'"  class="text-white">Bearbeiten</a></button>
+                  <button class="btn btn_delete mr-2" (click)="deleteCardClicked(card.id)">Löschen</button>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <ng-template #template>
+    <div class="modal-body text-center">
+      <p style="color: rgb(232, 137, 84);">Wollen Sie die card  "{{deleteLastCardName}}" wirklich löschen</p>
+      <button type="button" class="btn btn_delete mx-1" (click)="deleteCardConfimed()" >Ja</button>
+      <button type="button" class="btn btn_success mx-1" (click)="deleteCardDeclined()" >Nein</button>
+    </div>
+  </ng-template>
+  

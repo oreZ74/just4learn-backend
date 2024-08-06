@@ -1,0 +1,95 @@
+.stats_scrollable_div{
+    margin: 2rem;
+    background-color: #E88954;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.loading-spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats_data_div{
+  text-align: center;
+  background: linear-gradient(150deg, rgba(232,137,84,1) 13%, rgba(217,109,115,1) 31%, rgba(176,98,137,1) 55%, rgba(122,93,139,1) 72%, rgba(73,86,120,1) 87%, rgba(47,72,88,1) 100%);
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  color: white;
+  text-shadow: 1px 1px gray;
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;  
+  text-transform: capitalize;
+}
+
+.stats_data_div:first-child{
+  border-bottom: 3px solid black;
+}
+
+.stats_data_div:last-child{
+    border-bottom: none;
+}
+
+.stats_data_div:nth-child(even){
+    background-color: #E88954;
+}
+
+.hidden{
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+@media (prefers-reduced-motion) {
+  .hidden{
+      transition: none;
+  }
+}
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0%);
+}
+
+@media screen and (max-width: 950px) {
+  .stats_data_div{
+    height: 75px;
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .stats_data_div{
+    height: 55px;
+    font-weight: 200;
+    font-size: 14px;
+  }
+
+  .stats_scrollable_div{
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+
+  .stats_data_div{
+    height: 55px;
+    font-weight: 200;
+    font-size: 12px;
+  }
+
+  .stats_scrollable_div{
+    margin: 0.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class = "col-md-3" >
+            <div class="card">
+                <h2 class="card-title">Hallo {{ user ? (user.username || user.firstName) : '' }}!</h2>
+
+                <img class="profile-picture" src="../../assets/user_avatar.jpeg" alt="nav_logo"/>
+                <div class="card-body">
+                    <p class="card-text">Collections: {{ cardCollectionCount }}</p>
+                    <p class="card-text">Cards: {{ cardCount }}</p>
+                    <p class="card-text">zuletzt gelernt: {{ user ? formatDate(user.lastLearningSession) : '' }}</p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
